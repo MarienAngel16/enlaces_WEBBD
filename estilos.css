@@ -1,0 +1,69 @@
+header {
+    background-color: #003D79;
+    padding: 10px;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 150px; /* Ajusta el tamaño según sea necesario */
+    margin-right: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* Estilos para los botones con animaciones de hover */
+  button {
+    margin-left: 100px;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  button:hover {
+    background-color: white;
+    color: #003D79;
+  }
+
+  /* Estilos para funciones y enlaces */
+    .funciones_enlaces {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    #fun_altas,
+    #fun_enlaces {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .funcion-button button {
+        margin: 0 10px;
+        padding: 10px 15px;
+        border: 2px solid #003D79; /* Borde azul marino */
+        background-color: #003D79; /* Fondo azul marino */
+        color: white; /* Texto blanco */
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      .funcion-button button:hover {
+        background-color: white; /* Cambia a fondo blanco al pasar el ratón */
+        color: #003D79; /* Cambia a texto azul marino al pasar el ratón */
+      }
+
+    /* Estilos para la imagen del icono del alumno */
+    .icono_alumno {
+      width: 100%;
+      height: auto;
+    }

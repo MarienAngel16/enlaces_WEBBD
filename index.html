@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <title>Proyecto Enlaces BD</title>
 
     <!-- Conexión Bootstrap -->
@@ -15,32 +16,96 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
     <header>
-       
-        <!-- FORMULARIO DE INICIO -->
-    
-    
-       <div class="container-fluid" style="background-color:#003D79 ;">
+      <div class="container-fluid">
         <div class="row">
-    
-          <div class="col-sm-1"> <!-- COLUMNA PARA EL LOGO -->
-           <img class="logo" 
-            style="width: 200%;
-                   margin: 20px 5px;" 
-            src="https://posgrado.unam.mx/trabajosocial/wp-content/uploads/2021/05/logo-unam-png-blanco-ok.png" alt="">
+          <div class="col-sm-6 logo-container">
+            <img class="logo" src="https://posgrado.unam.mx/trabajosocial/wp-content/uploads/2021/05/logo-unam-png-blanco-ok.png" alt="Logo UNAM">
+            <h2 style="color: aliceblue;">Universidad Nacional Autónoma de México</h2>
           </div>
-    
-
-          
-
-          <div class="col-sm-11">
-           <h1 style="display: block; color:aliceblue; text-align: center; padding: 40px 0px 0px 0px;  ">Organizador de Contenidos y Enlaces</h1>
+          <div class="col-sm-6 button-container">
+            <button id="btn-altas">Altas</button>
+            <button id="btn-enlaces">Enlaces</button>
           </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- CONTENIDO PRINCIPAL -->
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-7">
+          <h1 style="display: block;text-align: center; padding: 40px 0px 0px 0px;  ">Organizador de Contenidos y Enlaces</h1>
+          <div class="funciones_enlaces">
+            <div id="fun_altas" class="funcion-content">
+              <!-- Contenido de Altas -->
+              <h2>Agrega más cosas interesantes</h2>
+              <p>Aquí puedes colocar el contenido HTML que desees para Altas.</p>
+             
+              <div class="funcion-button">
+                <button id="btn-new_contenido">Contenido Nuevo</button>                
+                <button id="btn-new_enlace">Enlaces Nuevos</button>
+              </div>
 
+              <div id="form_alta_contenido"></div>
+            
+            </div>
+            <div id="fun_enlaces" class="funcion-content">
+              <!-- Contenido de Enlaces -->
+              <h2>Contenido de Enlaces</h2>
+              <p>Aquí se mostrarán todos los enlaces que ya se tengan.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <img class="icono_alumno" src="img/icono_default.png" alt="">
+        </div>
       </div>
     </div>
     
-    </header>
-
+    <!-- DECLARACIÓN DE JS -->
     
+    <script>
+      // Selecciona los elementos HTML
+      const btnAltas = document.getElementById('btn-altas');
+      const btnEnlaces = document.getElementById('btn-enlaces');
+      const funAltas = document.getElementById('fun_altas');
+      const funEnlaces = document.getElementById('fun_enlaces');
+    
+      // Añade eventos de clic a los botones
+      btnAltas.addEventListener('click', () => mostrarFuncion(funAltas));
+      btnEnlaces.addEventListener('click', () => mostrarFuncion(funEnlaces));
+    
+      // Función para mostrar la función correspondiente
+      function mostrarFuncion(funcionElemento) {
+        // Oculta todas las funciones
+        funAltas.style.display = 'none';
+        funEnlaces.style.display = 'none';
+    
+        // Muestra la función correspondiente
+        funcionElemento.style.display = 'block';
+      }
+
+
+      const btnNewContenido = document.getElementById('btn-new_contenido');
+  const formAltaContenido = document.getElementById('form_alta_contenido');
+
+  btnNewContenido.addEventListener('click', cargarFormularioContenido);
+
+  function cargarFormularioContenido() {
+    fetch('funciones/alta_contenidos.php')
+      .then(response => response.text())
+      .then(html => {
+        formAltaContenido.innerHTML = html;
+        formAltaContenido.style.display = 'block';
+      });
+  }
+
+
+    </script>
+
+
 </body>
 </html>
+
+
