@@ -1,24 +1,18 @@
 <?php
-/* $servername = "server1242"; */
-$username = "u783994482_admin_cute";
-$password = "01MundoMediaTv*";
-$database = "u783994482_esta_bonita_BD";
+// Configuración de conexión a la base de datos
+$host = "bnezzz1j7fm1kcnkzkpf-mysql.services.clever-cloud.com";
+$user = "u0k9oqrrgijpodzx";
+$password = "LbrhZXSBSGg0uG6e6Tf7";
+$database = "bnezzz1j7fm1kcnkzkpf";
+$port = 3306;
 
-$server = "server1242"; // Puedes cambiar esto a la dirección IP o el nombre de dominio de tu servidor MySQL
+$conexion = mysqli_connect($host, $user, $password, $database, $port);
 
-// Conexión a la base de datos usando MySQLi
-$conn = new mysqli("localhost", $username, $password, $database);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+// Verificar la conexión a la base de datos
+if (!$conexion) {
+    die("La conexión a la base de datos falló: " . mysqli_connect_error());
+} else {
+    echo "Conexión exitosa a la base de datos.";
 }
-
-echo "Conexión exitosa";
-
-// Puedes realizar operaciones en la base de datos aquí
-
-// Cerrar la conexión al final
-$conn->close();
 ?>
 
