@@ -1,3 +1,5 @@
+<?php include_once 'base.php'; ?>
+
 <html>   
 <div class="container">
     <form style="margin:50px;" action="alta.php" method="get">
