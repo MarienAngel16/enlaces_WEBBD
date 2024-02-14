@@ -102,6 +102,20 @@
   }
 
 
+  const btnNewEnlace = document.getElementById('btn-new_enlace');
+  const formAltaEnlace = document.getElementById('form_alta_enlace');
+
+  btnNewContenido.addEventListener('click', cargarFormularioContenido);
+
+  function cargarFormularioContenido() {
+    fetch('funciones/alta_contenidos.php')
+      .then(response => response.text())
+      .then(html => {
+        formAltaContenido.innerHTML = html;
+        formAltaContenido.style.display = 'block';
+      });
+  }
+
     </script>
 
 
