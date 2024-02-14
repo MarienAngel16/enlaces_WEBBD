@@ -52,12 +52,29 @@
               <div id="form_alta_enlace"></div>
             
             </div>
+
             <div id="fun_enlaces" class="funcion-content">
               <!-- Contenido de Enlaces -->
               <h2>Contenido de Enlaces</h2>
-              <p>Aquí se mostrarán todos los enlaces que ya se tengan.</p>           
+              <p>Aquí se mostrarán todos los enlaces que ya se tengan.</p>
+              <script>
+                  fetch('funciones/muestra_enlaces.php') // Reemplaza alta_contenidos.php por alta_enlaces.php si es necesario
+                      .then(response => response.text())
+                      .then(html => {
+                          document.getElementById('fun_enlaces').innerHTML = html;
+                          document.getElementById('fun_enlaces').style.display = 'block';
+                      });
+              </script>
+              <script>
+                fetch('funciones/muestra_links.php') // Reemplaza alta_contenidos.php por alta_enlaces.php si es necesario
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('fun_enlaces').innerHTML = html;
+                        document.getElementById('fun_enlaces').style.display = 'block';
+                    });
+            </script>
+          </div> 
 
-            </div>
           </div>
         </div>
         <div class="col-sm-5">
