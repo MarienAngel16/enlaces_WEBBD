@@ -31,7 +31,7 @@
 </div>
 
 <?php
-include_once 'xbase.php';
+include_once 'base.php';
 
 if(isset($_GET["clave_cont"])){
 

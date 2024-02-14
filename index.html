@@ -47,13 +47,16 @@
                 <button id="btn-new_enlace">Enlaces Nuevos</button>
               </div>
 
+              <!-- Muestra los formularios de contenido o de enlace -->
               <div id="form_alta_contenido"></div>
+              <div id="form_alta_enlace"></div>
             
             </div>
             <div id="fun_enlaces" class="funcion-content">
               <!-- Contenido de Enlaces -->
               <h2>Contenido de Enlaces</h2>
-              <p>Aquí se mostrarán todos los enlaces que ya se tengan.</p>
+              <p>Aquí se mostrarán todos los enlaces que ya se tengan.</p>           
+
             </div>
           </div>
         </div>
@@ -105,14 +108,14 @@
   const btnNewEnlace = document.getElementById('btn-new_enlace');
   const formAltaEnlace = document.getElementById('form_alta_enlace');
 
-  btnNewContenido.addEventListener('click', cargarFormularioContenido);
+  btnNewEnlace.addEventListener('click', cargarFormularioEnlaces);
 
-  function cargarFormularioContenido() {
-    fetch('funciones/alta_contenidos.php')
+  function cargarFormularioEnlaces() {
+    fetch('funciones/alta_enlaces.php')
       .then(response => response.text())
       .then(html => {
-        formAltaContenido.innerHTML = html;
-        formAltaContenido.style.display = 'block';
+        formAltaEnlace.innerHTML = html;
+        formAltaEnlace.style.display = 'block';
       });
   }
 
