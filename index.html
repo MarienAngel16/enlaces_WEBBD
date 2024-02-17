@@ -20,11 +20,12 @@
         <div class="row">
           <div class="col-sm-6 logo-container">
             <img class="logo" src="https://posgrado.unam.mx/trabajosocial/wp-content/uploads/2021/05/logo-unam-png-blanco-ok.png" alt="Logo UNAM">
-            <h2 style="color: aliceblue;">Universidad Nacional Autónoma de México</h2>
+            <h2 style="color: aliceblue; ">Universidad Nacional Autónoma de México</h2>
           </div>
           <div class="col-sm-6 button-container">
-            <button id="btn-altas">Altas</button>
-            <button id="btn-enlaces">Enlaces</button>
+            <button class="btn-1" id="btn-altas">Altas</button>
+            <button class="btn-2" id="btn-enlaces">Enlaces</button>
+            <button class="btn-3" id="btn-bajas">Bajas</button>
           </div>
         </div>
       </div>
@@ -76,6 +77,25 @@
           </div> 
 
           </div>
+        </div>
+        <div id="funci_bajas" class="funcion-content">
+          <h2>Sistema de Bajas</h2>
+          <script>
+            fetch('funciones/muestra_enlaces.php') // Reemplaza alta_contenidos.php por alta_enlaces.php si es necesario
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('fun_enlaces').innerHTML = html;
+                    document.getElementById('fun_enlaces').style.display = 'block';
+                });
+        </script>
+        <script>
+          fetch('funciones/muestra_links.php') // Reemplaza alta_contenidos.php por alta_enlaces.php si es necesario
+              .then(response => response.text())
+              .then(html => {
+                  document.getElementById('fun_enlaces').innerHTML = html;
+                  document.getElementById('fun_enlaces').style.display = 'block';
+              });
+      </script>
         </div>
         <div class="col-sm-5">
           <img class="icono_alumno" src="img/icono_default.png" alt="">
