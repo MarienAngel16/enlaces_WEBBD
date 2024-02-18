@@ -69,14 +69,17 @@ header {
     }
     .btn-1{
       background-color: #003D79;
-      border-radius: 10%;
+      border-radius: 12%;
+      border-width: 1.5px;
    
     }
     .btn-2{
       background-color: #003D79;
-      border-radius: 10%;
+      border-radius: 12%;
+      border-width: 1.5px;
     }
     .btn-3{
       background-color: #003D79;
-      border-radius: 10%;
+      border-radius: 12%;
+      border-width: 1.5px;
     }
