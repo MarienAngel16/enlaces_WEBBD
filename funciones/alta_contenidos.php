@@ -58,35 +58,10 @@ if ($resultado==1)
     
     if($consulta)
     {
-        echo'        
-        <div class="row" style="display: block;">
-        <h3 
-        style="
-              margin:5%  auto;
-              color: #003D79;
-              font-size: 300%;
-              text-align: center;" >
-              
-        Guardado Correctamente     
-       
-        </h3>
-        </div>  ';
+        echo "<script>alert('Guardado Correctamente');</script>";
     }else    
     {
-        echo'        
-        <div class="row" style="display: block;">
-        <h3 
-        style="
-              margin:5%  auto;
-              color: #003D79;
-              font-size: 300%;
-              text-align: center;" >
-              
-        No se pudo guardar
-    
-        
-        </h3>
-        </div>  ';
+        echo "<script>alert('No se pudo guardar');</script>";
     }   
     
     mysqli_close($conexion);

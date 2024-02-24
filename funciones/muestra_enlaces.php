@@ -1,7 +1,7 @@
 <?php
 include_once 'base.php';
 
-$consultaContenidos = "SELECT clave, nombre FROM contenido";
+$consultaContenidos = "SELECT clave, nombre, total FROM contenidos";
 $resultadoContenidos = mysqli_query($conexion, $consultaContenidos);
 
 if (mysqli_num_rows($resultadoContenidos) > 0) {
@@ -9,8 +9,9 @@ if (mysqli_num_rows($resultadoContenidos) > 0) {
     while ($filaContenido = mysqli_fetch_assoc($resultadoContenidos)) {
         $claveContenido = $filaContenido['clave'];
         $nombreContenido = $filaContenido['nombre'];
+        $total = $filaContenido['total'];
 
-        echo '<a href="funciones/muestra_enlaces.php?clave_en=' . $claveContenido . '" class="btn btn-primary bg-gradient rounded" style="margin: 1px; color: white; font-size: 120%;">' . $claveContenido . ' - ' . $nombreContenido . ' - ' .mysqli_num_rows($resultadoContenidos). '</a><br>';
+        echo '<a href="funciones/muestra_enlaces.php?clave_en=' . $claveContenido . '" class="btn btn-primary bg-gradient rounded" style="margin: 1px; color: white; font-size: 120%;">' . $claveContenido . ' - ' . $nombreContenido . ' - ' .$total. '</a><br>';
     }
     echo '</div>';
 } else {
