@@ -43,7 +43,7 @@ $cont=mysqli_real_escape_string($conexion,$_GET["tipo_cont"]);
 
 //vamos a asegurarnos de que se inserte un registro si la consulta no es la misma)
 //en esta parte vamos a agarrar el registro completo
-$busca=mysqli_query($conexion,"select * from contenido where 
+$busca=mysqli_query($conexion,"select * from contenidos where 
 clave='$clave' and nombre='$nombre'  and contenido='$cont' ");
 
 $resultado=mysqli_num_rows($busca);
@@ -53,7 +53,7 @@ if ($resultado==1)
     echo "<br><h1>El registro ya está en la BD</h1>";
 }else
 {
-    $consulta=mysqli_query($conexion, "insert into contenido (clave,nombre,contenido)values 
+    $consulta=mysqli_query($conexion, "insert into contenidos (clave,nombre,contenido)values 
     ('$clave','$nombre','$cont')");
     
     if($consulta)

@@ -1,6 +1,6 @@
 <html>   
 <div class="container">
-    <form style="margin:50px;" action="funciones/alta_contenidos.php" method="get">
+    <form style="margin:50px;" action="funciones/alta_enlaces.php" method="get">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
@@ -35,14 +35,14 @@ include_once 'base.php';
 
 if(isset($_GET["clave_cont"])){
 
+$tipo=mysqli_real_escape_string($conexion,$_GET["clave_cont"]);
 $clave=mysqli_real_escape_string($conexion,$_GET["clave_cont"]);
 $nombre=mysqli_real_escape_string($conexion,$_GET["nombre_cont"]);
-$cont=mysqli_real_escape_string($conexion,$_GET["tipo_cont"]);
+$enlace=mysqli_real_escape_string($conexion,$_GET["tipo_cont"]);
 
-//vamos a asegurarnos de que se inserte un registro si la consulta no es la misma)
-//en esta parte vamos a agarrar el registro completo
-$busca=mysqli_query($conexion,"select * from contenido where 
-clave='$clave' and nombre='$nombre'  and contenido='$cont' ");
+$r = mysqli_query($conexion, "call unregistro('$tipo','$clave','$nombre','$enlace')"); 
+
+
 
 $resultado=mysqli_num_rows($busca);
 
@@ -51,7 +51,7 @@ if ($resultado==1)
     echo "<br><h1>El registro ya está en la BD</h1>";
 }else
 {
-    $consulta=mysqli_query($conexion, "insert into contenido (clave,nombre,contenido)values 
+    $consulta=mysqli_query($conexion, "insert into contenidos (clave,nombre,contenido)values 
     ('$clave','$nombre','$cont')");
     
     if($consulta)
