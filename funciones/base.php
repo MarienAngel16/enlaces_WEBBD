@@ -11,6 +11,7 @@ $conexion = mysqli_connect($host, $user, $password, $database, $port);
 // Verificar la conexión a la base de datos
 if (!$conexion) {
     die("La conexión a la base de datos falló: " . mysqli_connect_error());
+} ?>
 } 
 ?>
 
