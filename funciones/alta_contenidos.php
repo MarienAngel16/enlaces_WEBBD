@@ -6,8 +6,8 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="curp">Clave</label>
-                            <input type="text" name="clave_cont" id="curp" class="form-control" required="required">
+                            <label for="clave">Clave</label>
+                            <input type="text" name="clave_cont" id="clave" class="form-control" required="required">
                         </div>
 
                         <div class="form-group">

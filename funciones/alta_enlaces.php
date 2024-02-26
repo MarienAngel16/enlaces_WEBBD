@@ -4,7 +4,7 @@
 /* 
 <!-- GENERADO DE ARREGLO PARA GRUPOS --> */
 
-// Realizar una consulta para obtener los valores de la columna Grupo_id
+// Realizar una consulta para obtener los valores de la columna Contenido
 $consulta = mysqli_query($conexion, "SELECT clave FROM contenido");
 
 // Crear un arreglo para almacenar los valores de clave y nombre
