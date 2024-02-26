@@ -17,7 +17,7 @@ while ($filaContenido = mysqli_fetch_assoc($resultadoContenidos)) {
 
     echo '
     
-        <div class="card" style="width: 15rem;">      
+        <div class="card" style="width: 15rem; background-color:grey;">      
             <div class="card-body">
                 <h5 class="card-title">' . $claveContenido . ' - ' . $nombreContenido . ' - ' . $total . '</h5>
                 <div class=".text-light muestra_enlaces"> ';
