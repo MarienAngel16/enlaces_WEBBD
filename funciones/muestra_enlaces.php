@@ -31,13 +31,13 @@ if (mysqli_num_rows($resultadoContenidos) > 0) {
                     $linkEnlace = $filaEnlace['enlace'];
                     $tipoEnlace = $filaEnlace['tipo'];
 
-                    echo '<a href="' . $linkEnlace . '" style="margin: 1px;">' . $nombreEnlace . '</a>
-                          <img src="img/enlace_icono.png" alt="">
-                          <form action="baja_enlaces.php" method="post">   
+                    echo '<a href="' . $linkEnlace . '" style="margin: 1px;">' . $nombreEnlace . ' <img style="width:10%;"  src="img/enlace_icono.jpg" alt=""></a>
+
+                          <form action="funciones/muestra_enlaces.php" method="post">   
                               <input type="hidden" name="link_enlace" value="' . $linkEnlace . '">
                               <input type="hidden" name="clave_contenido" value="' . $claveContenido . '">
                               <input type="hidden" name="tipo_enlace" value="' . $tipoEnlace. '">
-                              <button type="submit" name="baja_e">Borrar</button>
+                              <button class="btn btn-primary" type="submit" name="ejecutar_procedimiento_bajas">Borrar</button>
                           </form>
                     ';
                 }
@@ -69,6 +69,31 @@ if (mysqli_num_rows($resultadoContenidos) > 0) {
 } else {
     echo "No se encontraron contenidos.";
 }
+
+
+
+
+// Si se hace clic en el botón
+if (isset($_POST['ejecutar_procedimiento_bajas'])) {
+    // Obtiene el valor de $link_enlace
+    $link_enlace = $_POST['link_enlace'];
+    $clave_contenido = $_POST['clave_contenido'];
+    $tipo_enlace = $_POST['tipo_enlace'];
+
+
+    $r = mysqli_query($conexion, "call bajaenlace('$link_enlace','$tipo_enlace','$clave_contenido')");
+
+    if ($r) {
+        echo "Procedimiento almacenado ejecutado con éxito.";
+    } else {
+        echo "Error al ejecutar el procedimiento almacenado: " . $mysqli->error;
+    }
+}
+
+
+
+
+
 
 mysqli_close($conexion);
 ?>
