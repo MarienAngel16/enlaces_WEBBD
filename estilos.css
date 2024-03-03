@@ -68,7 +68,6 @@ header {
       height: auto;
     }
 
-   /*  Deslizamiento de enlaces */
    .muestra_enlaces {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -76,4 +75,4 @@ header {
 
     .muestra_enlaces.mostrar {
     opacity: 1;
-   }
+   } 
